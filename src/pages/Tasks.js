@@ -13,7 +13,8 @@ const task_data = [
     status: 0,
     type: 0,
     due: '',
-    comments: []
+    comments: [],
+    hours: 0
   },
   {
     id: 2,
@@ -22,7 +23,8 @@ const task_data = [
     status: 1,
     type: 0,
     due: '',
-    comments: []
+    comments: [],
+    hours: 0
   },
   {
     id: 3,
@@ -31,7 +33,8 @@ const task_data = [
     status: 0,
     type: 0,
     due: '',
-    comments: []
+    comments: [],
+    hours: 0
   },
   {
     id: 4,
@@ -40,7 +43,8 @@ const task_data = [
     status: 1,
     type: 0,
     due: '',
-    comments: []
+    comments: [],
+    hours: 0
   },
 ]
 
@@ -134,8 +138,7 @@ export const Tasks = () => {
           <animated.div style={animation} key={index}>
             <Task
               style={animation}
-              id={filteredTasks[index].id}
-              task={filteredTasks[index].task}
+              task={filteredTasks[index]}
             />
           </animated.div>
         ))}

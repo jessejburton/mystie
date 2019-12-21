@@ -20,3 +20,16 @@ body {
   color: #0b0b0d;
 }
 
+.sortable {
+  margin-bottom: .5rem;
+  border: 1px solid #D3D3D3;
+  background-color: white;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+  border-radius: 3px;
+  z-index: 50;
+  position: relative;
+}
+
+.sortable h3 {
+  margin-bottom: 1rem;
+}

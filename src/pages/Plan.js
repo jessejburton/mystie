@@ -1,29 +1,35 @@
 import React, { useState } from 'react'
 import SecondaryNavigation from '../components/SecondaryNavigation'
+import PlanMonth from './PlanMonth'
+import PlanMonthly from './PlanMonthly'
+import Content from '../layout/Content'
+import moment from 'moment'
 
 export const Plan = () => {
 
-  const [page, setPage] = useState("monthly");
+  const [page, setPage] = useState("month");
 
   return (
     <div>
       <SecondaryNavigation>
+        <li onClick={() => setPage("month")}>{moment().format('MMMM')}</li>
         <li onClick={() => setPage("monthly")}>Monthly</li>
-        <li onClick={() => setPage("yearly")}>Yearly</li>
-        <li onClick={() => setPage("reports")}>Reports</li>
+        <li onClick={() => setPage("history")}>History</li>
       </SecondaryNavigation>
 
-      {page === "monthly" &&
-        <h1>January</h1>
-      }
+      <Content>
+        {page === "month" &&
+          <PlanMonth />
+        }
 
-      {page === "yearly" &&
-        <h1>2020</h1>
-      }
+        {page === "monthly" &&
+          <PlanMonthly />
+        }
 
-      {page === "reports" &&
-        <h1>Reports</h1>
-      }
+        {page === "history" &&
+          <h1>History</h1>
+        }
+      </Content>
 
     </div>
   )
